@@ -1,1 +1,1 @@
-# kugi-webgl.github.io
+# webgl-page
