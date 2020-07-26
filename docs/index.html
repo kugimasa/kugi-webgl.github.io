@@ -8,20 +8,7 @@
 
     <!-- import the webpage's javascript file -->
     <script src="src/minMatrix.js" type="text/javascript"></script>
-    <script src="src/shader.js" type="text/javascript"></script>
-    <script id="vs" type="x-shader/x-vertex">
-      attribute vec3 position;
-      uniform   mat4 mvpMatrix;
-
-      void main(void){
-          gl_Position = mvpMatrix * vec4(position, 1.0);
-      }
-    </script>
-    <script id="fs" type="x-shader/x-fragment">
-      void main(void){
-          gl_FragColor = vec4(0.215, 0.443, 0.556, 1.0);
-      }
-    </script>
+    <script type="module" src="src/pipeline.js"></script>
   </head>
 
   <body>
