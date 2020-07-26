@@ -1,4 +1,4 @@
-const canvas = document.getElementById("my-canvas");
+const canvas = document.getElementById("triangle-canvas");
 const context = canvas.getContext("2d");
 context.fillRect(0, 0, 400, 400);
 

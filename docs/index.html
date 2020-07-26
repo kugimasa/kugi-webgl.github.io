@@ -1,19 +1,44 @@
 <!DOCTYPE HTML>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css"/>
     <title>kugi's WebGL Projects</title>
+    <meta charset="UTF-8">
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style/style.css"/>
+
+    <!-- import the webpage's javascript file -->
+    <script src="src/minMatrix.js" type="text/javascript"></script>
+    <script src="src/shader.js" type="text/javascript"></script>
+    <script id="vs" type="x-shader/x-vertex" >
+      attribute vec3 position;
+      uniform   mat4 mvpMatrix;
+
+      void main(void){
+          gl_Position = mvpMatrix * vec4(position, 1.0);
+      }
+    </script>
+    <script id="fs" type="x-shader/x-fragment">
+      void main(void){
+          gl_FragColor = vec4(0.215, 0.443, 0.556, 1.0);
+      }
+    </script>
   </head>
+
   <body>
     <header>
       <h1>kugi's WebGL Projects</h1>
     </header>
+
     <div class="canvas-content">
       <canvas id="my-canvas" width="400" height="400"></canvas>
+      <p>Practice Canvas</p>
+    </div>
+
+    <div class="canvas-content">
+      <canvas id="triangle-canvas" width="400" height="400"></canvas>
       <p>Triangle</p>
       <p id="position">(0,0)</p>
     </div>
-    <script type="text/javascript" src="main.js"></script>
+    <script src="src/triangle.js" type="text/javascript"></script>
   </body>
 </html>
