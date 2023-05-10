@@ -6,7 +6,19 @@ var position = document.getElementById("position");
 var borderX = 1.5;
 var borderY = 1.875;
 
-drawTriangle();
+// stats.js
+var stats = new Stats();
+// 0: fps, 1: ms, 2: mb, 3+: custom
+stats.showPanel(0);
+document.body.appendChild(stats.dom);
+function animate() {
+    stats.begin();
+    // Check Performance
+    drawTriangle();
+    stats.end();
+    requestAnimationFrame(animate);
+}
+requestAnimationFrame(animate);
 
 canvas.addEventListener("mousemove", function (e) {
   var rect = e.target.getBoundingClientRect();
