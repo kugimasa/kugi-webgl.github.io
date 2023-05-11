@@ -8,8 +8,6 @@ async function init() {
     const device = await adapter.requestDevice();
 
     const c = document.getElementById("triangle-canvas");
-    c.width = window.innerWidth;
-    c.height = window.innerHeight;
     const ctx = c.getContext("webgpu");
     const format = gpu.getPreferredCanvasFormat();
     ctx.configure({
